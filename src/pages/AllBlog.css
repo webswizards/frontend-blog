@@ -1,0 +1,63 @@
+/* Style the table container */
+.allblogcontainer {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the table */
+  Table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style the table header */
+  Thead {
+    background-color: rgb(31, 29, 29);
+    color: white;
+    border-radius: 9px;
+  }
+  
+  /* Style table header cells (Th) */
+  Th {
+    padding: 10px;
+  }
+  
+  /* Style table rows (Tr) */
+  Tr:nth-child(even) {
+    background-color: lightblue;
+  }
+  
+  /* Style table cells (Td) */
+  Td {
+    padding: 10px;
+  }
+  
+  /* Style the image in the table */
+  Td img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  /* Style the buttons */
+  .btnblog {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 7px;
+  }
+  
+  /* Adjust button styles for better appearance */
+ .btnblog:hover {
+    background-color: #333;
+  }
+  
+  /* Adjust button styles for icons (if you're using FontAwesome or similar) */
+  .btnblog svg {
+    vertical-align: middle;
+  }
+  

@@ -1,0 +1,16 @@
+.nk-header {
+    padding-top: 88px;
+  }
+  .has-mask > *:where(.nk-header), .has-shape > *:where(.nk-header) {
+    z-index: 6;
+  }
+  .nk-header-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 0.75rem 0px;
+    transition: all 0.2s linear;
+    background-color: #fff;
+  }
