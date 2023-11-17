@@ -16,7 +16,7 @@ const Swipper = () => {
   useEffect(() => {
     setrelatedPostData(posts);
   }, []);
-  console.log(relatedpostData);
+ 
   return (
     <>
       <main className="nk-pages">
@@ -40,7 +40,7 @@ const Swipper = () => {
                           spaceBetween: 15,
                         },
                         700: {
-                          slidesPerView: 3,
+                          slidesPerView: 2,
                           spaceBetween: 15,
                         },
                       }}

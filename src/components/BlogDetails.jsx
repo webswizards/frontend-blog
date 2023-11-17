@@ -111,8 +111,9 @@ const BlogDetails = () => {
                     <div className="my-5">
                       <img
                         className="rounded-4 w-100"
-                        src={postData?.image?.url}
-                        alt=""
+                        src={postData?.image}
+                        alt="thumbnail"
+                      
                       />
                     </div>
                   </div>
@@ -124,19 +125,19 @@ const BlogDetails = () => {
                     </div>
                     <ul className="btn-list gy-3 ps-xl-6 ps-lg-4 ps-3">
                       <li>
-                        <a className="link-secondary" href="#">
+                        <a className="link-secondary" href="https://www.facebook.com/profile.php?id=100089147380867">
                           <em className="icon fs-3 ni ni-facebook-circle"></em>
                         </a>
                       </li>
                       <li>
-                        <a className="link-secondary" href="#">
+                        <a className="link-secondary" href="https://instagram.com/_webs_wizard_?igshid=OGQ5ZDc2ODk2ZA==">
                           <em className="icon fs-3 ni ">
                             <AiFillInstagram />
                           </em>
                         </a>
                       </li>
                       <li>
-                        <a className="link-secondary" href="#">
+                        <a className="link-secondary" href="https://www.linkedin.com/in/webs-wizards/">
                           <em className="icon fs-3 ni ni-linkedin-round"></em>
                         </a>
                       </li>

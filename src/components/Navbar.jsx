@@ -25,11 +25,9 @@ const Navbar = () => {
       .then((response) => response.json())
       .then((data) => {
         setCategorydata(data?.data);
-       
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        
       });
   }, []);
   return (
@@ -83,51 +81,48 @@ const Navbar = () => {
                       <span className="nk-menu-text">Contact us</span>
                     </Link>
                   </li>
-                 
-
-
-
 
                   {categorydata.length > 0 ? (
-                          categorydata.map((category) => (
-                            <li
-                              className="nk-menu-item"
-                              key={category._id}
-                              value={category._id}
-                            >
-                             <Link className="nk-menu-link" to={`/category/${category.name.toLowerCase()}`}>
-                             <span className="nk-menu-text">{category.name}</span>
-                                
-                              </Link>
-                            </li>
-                          ))
-                        ) : (
-                          <li className="nk-menu-item">
-                    
+                    categorydata.map((category) => (
+                      <li
+                        className="nk-menu-item"
+                        key={category._id}
+                        value={category._id}
+                      >
+                        <Link
+                          className="nk-menu-link"
+                          to={`/category/${category.name.toLowerCase()}`}
+                        >
+                          <span className="nk-menu-text">{category.name}</span>
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="nk-menu-item">
                       <span className="nk-menu-text">Loading</span>
-      
-                  </li>
-                        )}
-                 {
-                  role === "admin" && <li className="nk-menu-item has-dropdown">
-                    <a href="#" className="nk-menu-link nk-menu-toggle">
-                      <span className="nk-menu-text">Posts</span>
-                    </a>
-                    <div className="nk-menu-dropdown">
-                      <ul className="nk-menu-sub">
-                        <li className="nk-menu-item">
-                          <Link className="nk-menu-link" to="/allblogs">
-                            ALL POST
-                          </Link>
-                        </li>
-                        <li className="nk-menu-item">
-                          <Link className="nk-menu-link" to="/addpost">
-                            ADD POST
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>}
+                    </li>
+                  )}
+                  {role === "admin" && (
+                    <li className="nk-menu-item has-dropdown">
+                      <a href="#" className="nk-menu-link nk-menu-toggle">
+                        <span className="nk-menu-text">Posts</span>
+                      </a>
+                      <div className="nk-menu-dropdown">
+                        <ul className="nk-menu-sub">
+                          <li className="nk-menu-item">
+                            <Link className="nk-menu-link" to="/allblogs">
+                              ALL POST
+                            </Link>
+                          </li>
+                          <li className="nk-menu-item">
+                            <Link className="nk-menu-link" to="/addpost">
+                              ADD POST
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  )}
                 </ul>
                 <ul className="nk-menu-buttons flex-lg-row-reverse">
                   {token === null && (

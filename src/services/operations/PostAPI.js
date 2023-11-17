@@ -21,10 +21,10 @@ const {
 export function createPost(data, token) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
-    console.log("hi");
+
     dispatch(setLoading(true));
     try {
-      console.log("inside try");
+ 
       const response = await apiConnector(
         "POST",
         CREATEAPI,
@@ -35,9 +35,6 @@ export function createPost(data, token) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log("data");
-
-      console.log("RESETPASSWORD RESPONSE............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -46,7 +43,7 @@ export function createPost(data, token) {
       toast.success("post added Successfully");
       // navigate("/");
     } catch (error) {
-      console.log("post ERROR............", error);
+
       toast.error("Failed To create category ");
     }
     toast.dismiss(toastId);
@@ -57,10 +54,10 @@ export function createPost(data, token) {
 export function editPost(data, token) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
-    console.log("hi");
+   
     dispatch(setLoading(true));
     try {
-      console.log("inside try");
+     
       const response = await apiConnector(
         "put",
         EDITPOSTAPI,
@@ -71,9 +68,9 @@ export function editPost(data, token) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log("data");
+      
 
-      console.log("RESETPASSWORD RESPONSE............", response);
+      
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -82,7 +79,7 @@ export function editPost(data, token) {
       toast.success("post added Successfully");
       // navigate("/");
     } catch (error) {
-      console.log("post ERROR............", error);
+   
       toast.error("Failed To create category ");
     }
     toast.dismiss(toastId);
@@ -93,17 +90,17 @@ export function editPost(data, token) {
 export function deletePost(postId, token) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
-    console.log("hi");
+
     dispatch(setLoading(true));
     try {
-      console.log("inside try");
+      
 
       const response = await apiConnector("POST", DELETEPOSTAPI, postId, {
         Authorization: `Bearer ${token}`,
       });
-      console.log("data");
+      
 
-      console.log("RESETPASSWORD RESPONSE............", response);
+     
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -112,7 +109,7 @@ export function deletePost(postId, token) {
       toast.success("post added Successfully");
       // navigate("/");
     } catch (error) {
-      console.log("post ERROR............", error);
+     
       toast.error("Failed To create category ");
     }
     toast.dismiss(toastId);
@@ -132,7 +129,7 @@ export function showost(page) {
       dispatch(setTotalPages(response?.data?.totalPages));
       dispatch(setCurrentPage(response?.data?.currentPage));
 
-      // console.log(response)
+   
       if (!response.data.success) {
         throw new Error(response.data.message);
       }

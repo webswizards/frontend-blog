@@ -1,17 +1,18 @@
 import React, { useState, useRef } from "react";
-import JoditEditor from "jodit-react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { BASE_URL } from "../services/apis";
 import { createPost } from "../services/operations/PostAPI";
 import Img from "../images/logo-dark.png";
+import Editor from 'react-simple-wysiwyg';
 const AddPost = () => {
   const [content, setContent] = useState("");
   const [categorydata, setCategorydata] = useState([]);
   const [thumbnailImage, setImageFile] = useState(null);
   const [loading, setLoading] = useState(true);
   const editor = useRef(null);
+
   const fileInputRef = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const AddPost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(thumbnailImage);
+  
     const formData = new FormData();
     formData.append("title", values.title);
     formData.append("content", content);
@@ -71,6 +72,11 @@ const AddPost = () => {
       [name]: value,
     });
   };
+
+  function edtiorhandler(e) {
+    setContent(e.target.value);
+  }
+
 
   return (
     <div>
@@ -109,18 +115,12 @@ const AddPost = () => {
                                 </div>
                               </div>
                             </div>
+                           
                             <div className="col-12">
                               <div className="form-group">
                                 <label className="form-label">Content</label>
                                 <div className="form-control-wrap">
-                                  <JoditEditor
-                                    className="editor"
-                                    ref={editor}
-                                    value={content}
-                                    onChange={(newContent) =>
-                                      setContent(newContent)
-                                    }
-                                  />
+                                <Editor value={content} onChange={edtiorhandler} />
                                 </div>
                               </div>
                             </div>

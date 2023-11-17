@@ -21,7 +21,7 @@ const Blog = (blog) => {
       <div className="card border-0 shadow-tiny rounded-4">
         <div className="card-body p-4">
           <div className="d-block">
-            <img className="rounded-4 w-100" src={blog?.post?.image?.url} alt="" />
+            <img className="rounded-4 w-100" src={`${blog?.post?.image}`} alt="" />
           </div>
           <div
             className="badge px-3 py-2 mt-4 mb-3 text-bg-primary-soft fw-normal rounded-pill"

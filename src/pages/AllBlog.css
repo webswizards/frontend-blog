@@ -1,63 +1,109 @@
-/* Style the table container */
-.allblogcontainer {
-    background-color: lightblue;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.btnblog{
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  scale: 0.95;
+}
+.btnblog:hover{
+  scale: 1;
+  color: blue;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
   }
   
-  /* Style the table */
-  Table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  /* Style the table header */
-  Thead {
-    background-color: rgb(31, 29, 29);
-    color: white;
-    border-radius: 9px;
-  }
-  
-  /* Style table header cells (Th) */
-  Th {
-    padding: 10px;
-  }
-  
-  /* Style table rows (Tr) */
-  Tr:nth-child(even) {
-    background-color: lightblue;
-  }
-  
-  /* Style table cells (Td) */
-  Td {
-    padding: 10px;
-  }
-  
-  /* Style the image in the table */
-  Td img {
-    max-width: 100px;
-    max-height: 100px;
-  }
-  
-  /* Style the buttons */
-  .btnblog {
-    background-color: black;
-    color: white;
+  table thead {
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 7px;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
   }
   
-  /* Adjust button styles for better appearance */
- .btnblog:hover {
-    background-color: #333;
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
   }
   
-  /* Adjust button styles for icons (if you're using FontAwesome or similar) */
-  .btnblog svg {
-    vertical-align: middle;
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
   }
   
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}

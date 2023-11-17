@@ -29,7 +29,7 @@ const Contact = () => {
       );
   };
 
-  console.log(form)
+
   return (
     <>
       <main className="nk-pages">
@@ -199,39 +199,39 @@ const Contact = () => {
             </div>
           </div>
         </section>
-        <section class="section section-bottom-0">
-          <div class="container">
-            <div class="section-wrap bg-primary bg-opacity-10 rounded-4">
-              <div class="section-content bg-pattern-dot-sm p-4 p-sm-6">
-                <div class="row justify-content-center text-center">
-                  <div class="col-xl-8 col-xxl-9">
-                    <div class="block-text">
-                      <h6 class="overline-title text-primary">
+        <section className="section section-bottom-0">
+          <div className="container">
+            <div className="section-wrap bg-primary bg-opacity-10 rounded-4">
+              <div className="section-content bg-pattern-dot-sm p-4 p-sm-6">
+                <div className="row justify-content-center text-center">
+                  <div className="col-xl-8 col-xxl-9">
+                    <div className="block-text">
+                      <h6 className="overline-title text-primary">
                         Boost your Articles
                       </h6>
-                      <h2 class="title">Free Guest Post Submission</h2>
-                      <p class="lead mt-3">
+                      <h2 className="title">Free Guest Post Submission</h2>
+                      <p className="lead mt-3">
                         submit your free guest post with just one click.
                       </p>
-                      <ul class="btn-list btn-list-inline">
+                      <ul className="btn-list btn-list-inline">
                         <li>
-                          <Link to={"/submit"} class="btn btn-lg btn-primary">
+                          <Link to={"/submit"} className="btn btn-lg btn-primary">
                             <span>Start writing for free</span>
-                            <em class="icon ni ni-arrow-long-right"></em>
+                            <em className="icon ni ni-arrow-long-right"></em>
                           </Link>
                         </li>
                       </ul>
-                      <ul class="list list-row gy-0 gx-3">
+                      <ul className="list list-row gy-0 gx-3">
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>High reach</span>
                         </li>
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>Quality Content</span>
                         </li>
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>Trustworthy</span>
                         </li>
                       </ul>

@@ -1,7 +1,3 @@
-
-
-@charset "UTF-8";
-
 @font-face {
   font-family: "Spline Sans";
   src: local("Spline Sans Medium"), local("SplineSans-Medium"), url("../fonts/SplineSans-Medium.woff2") format("woff2"), url("../fonts/SplineSans-Medium.woff") format("woff"), url("../fonts/SplineSans-Medium.ttf") format("truetype"), url("../fonts/SplineSans-Medium.svg#SplineSans-Medium") format("svg");
@@ -107,10 +103,49 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+
+.shimmer-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  border-radius:12px;
+  background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+  animation: shimmerAnimation 1.5s infinite linear;
+}
+.simg{
+  height:800px
+
+}
+@keyframes shimmerAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Your actual blog content styles */
+.blog-content {
+  /* Add your styles for the blog content here */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .nfound{

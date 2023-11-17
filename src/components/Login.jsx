@@ -33,7 +33,7 @@ const Login = () => {
           <div className="min-vh-100 d-flex flex-column has-mask">
             <div className="nk-mask bg-pattern-dot bg-blend-around"></div>
             <div className="text-center mt-6 mb-4">
-              <a href="index.html" className="logo-link">
+              <a href="#" className="logo-link">
                 <div className="logo-wrap">
                   <img className="logo-img logo-dark" src={LOGO} alt="" />
                 </div>
@@ -46,13 +46,13 @@ const Login = () => {
                     <div className="card border-0 shadow-sm rounded-4">
                       <div className="card-body">
                         <h4 className="mb-3">Welcome Back!</h4>
-                        <form action="index.html"   onSubmit={handleOnSubmit}>
+                        <form action="#"   onSubmit={handleOnSubmit}>
                           <div className="row g-4">
                             <div className="col-12">
                               <div className="form-group">
                                 <label
                                   className="form-label"
-                                  for="emailorusername"
+                                  htmlFor="email"
                                 >
                                   Email or Username
                                 </label>
@@ -75,13 +75,13 @@ const Login = () => {
                               <div className="form-group">
                                 <label
                                   className="form-label"
-                                  for="toggle-password"
+                                
                                 >
                                   Password
                                 </label>
                                 <div className="form-control-wrap">
                                   <a
-                                    href="toggle-password"
+                                    href="#"
                                     className="form-control-icon end password-toggle"
                                     title="Toggle show/hide password"
                                   >
@@ -114,14 +114,14 @@ const Login = () => {
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="rememberMe"
+                                     
                                     >
                                       {" "}
                                       Remember Me{" "}
                                     </label>
                                   </div>
                                 </div>
-                                <a href="reset-s2.html" className="small">
+                                <a href="#" className="small">
                                   Forgot Password?
                                 </a>
                               </div>
@@ -166,10 +166,7 @@ const Login = () => {
                                   </a>
                                 </li>
                               </ul>
-                              <p className="mt-4">
-                                Don't have an account?{" "}
-                                <a href="register-s2.html">Register</a>
-                              </p>
+                             
                             </div>
                           </div>
                         </form>

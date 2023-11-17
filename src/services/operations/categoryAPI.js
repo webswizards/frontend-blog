@@ -28,7 +28,7 @@ export function createCategory(name, description, token, navigate) {
         token,
       });
 
-      console.log("RESETPASSWORD RESPONSE............", response);
+
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -37,7 +37,7 @@ export function createCategory(name, description, token, navigate) {
       toast.success("category added Successfully");
       navigate("/");
     } catch (error) {
-      console.log("category ERROR............", error);
+     
       toast.error("Failed To create category ");
     }
     toast.dismiss(toastId);
@@ -58,7 +58,7 @@ export function showCategory() {
 
       toast.success("category fetched Successfully");
     } catch (error) {
-      console.log("category fetched ERROR............", error);
+   
       toast.error("Failed To fetched category ");
     }
     toast.dismiss(toastId);

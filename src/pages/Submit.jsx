@@ -66,48 +66,48 @@ const Submit = () => {
         />
         <meta itemprop="image" content="https://www.webswizards.in/logo-dark.png" />
       </Helmet>
-      <main class="nk-pages">
-        <section class="section has-shape has-mask">
-          <div class="nk-shape bg-shape-blur-m mt-8 start-50 top-0 translate-middle-x"></div>
-          <div class="nk-mask bg-pattern-dot bg-blend-around mt-n5 mb-10p mh-50vh"></div>
-          <div class="container">
-            <div class="section-content">
-              <div class="row g-gs justify-content-center align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6 col-md-11">
-                  <div class="block-gfx ps-xxl-5">
-                    <img class="w-100" src={submit} alt="" />
+      <main className="nk-pages">
+        <section className="section has-shape has-mask">
+          <div className="nk-shape bg-shape-blur-m mt-8 start-50 top-0 translate-middle-x"></div>
+          <div className="nk-mask bg-pattern-dot bg-blend-around mt-n5 mb-10p mh-50vh"></div>
+          <div className="container">
+            <div className="section-content">
+              <div className="row g-gs justify-content-center align-items-center flex-lg-row-reverse">
+                <div className="col-lg-6 col-md-11">
+                  <div className="block-gfx ps-xxl-5">
+                    <img className="w-100" src={submit} alt="" />
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="block-text pe-xxl-7">
-                    <h2 class="title">Do you have a Articles to Share?</h2>
-                    <p class="lead">
+                <div className="col-lg-6">
+                  <div className="block-text pe-xxl-7">
+                    <h2 className="title">Do you have a Articles to Share?</h2>
+                    <p className="lead">
                       Webswizards is accepting <b>Free Get Post.</b> Please send
                       your Articles in Word format if possible with a images to
                       webswizards@gmail.com.
                     </p>
-                    <ul class="list gy-3 pe-xxl-7">
+                    <ul className="list gy-3 pe-xxl-7">
                       <li>
-                        <em class="icon text-success fs-5 ni ni-check-circle-fill"></em>
+                        <em className="icon text-success fs-5 ni ni-check-circle-fill"></em>
                         <span>In-Depth Articles</span>
                       </li>
                       <li>
-                        <em class="icon text-success fs-5 ni ni-check-circle-fill"></em>
+                        <em className="icon text-success fs-5 ni ni-check-circle-fill"></em>
                         <span>High Reach</span>
                       </li>
                       <li>
-                        <em class="icon text-success fs-5 ni ni-check-circle-fill"></em>
+                        <em className="icon text-success fs-5 ni ni-check-circle-fill"></em>
                         <span>Trustworthy</span>
                       </li>
                     </ul>
-                    <ul class="btn-list btn-list-inline gy-0">
+                    <ul className="btn-list btn-list-inline gy-0">
                       <li>
                         <Link
                           to="mailto:webswizards@gmail.com"
-                          class="btn btn-lg btn-primary"
+                          className="btn btn-lg btn-primary"
                         >
                           <span>Get Started</span>
-                          <em class="icon ni ni-arrow-long-right"></em>
+                          <em className="icon ni ni-arrow-long-right"></em>
                         </Link>
                       </li>
                     </ul>
@@ -174,39 +174,39 @@ const Submit = () => {
           </div>
         </section>
 
-        <section class="section section-bottom-0">
-          <div class="container">
-            <div class="section-wrap bg-primary bg-opacity-10 rounded-4">
-              <div class="section-content bg-pattern-dot-sm p-4 p-sm-6">
-                <div class="row justify-content-center text-center">
-                  <div class="col-xl-8 col-xxl-9">
-                    <div class="block-text">
-                      <h6 class="overline-title text-primary">
+        <section className="section section-bottom-0">
+          <div className="container">
+            <div className="section-wrap bg-primary bg-opacity-10 rounded-4">
+              <div className="section-content bg-pattern-dot-sm p-4 p-sm-6">
+                <div className="row justify-content-center text-center">
+                  <div className="col-xl-8 col-xxl-9">
+                    <div className="block-text">
+                      <h6 className="overline-title text-primary">
                         Boost your Articles
                       </h6>
-                      <h2 class="title">Free Guest Post Submission</h2>
-                      <p class="lead mt-3">
+                      <h2 className="title">Free Guest Post Submission</h2>
+                      <p className="lead mt-3">
                         submit your free guest post with just one click.
                       </p>
-                      <ul class="btn-list btn-list-inline">
+                      <ul className="btn-list btn-list-inline">
                         <li>
-                          <div class="btn btn-lg btn-primary">
+                          <div className="btn btn-lg btn-primary">
                             <span>Start writing for free</span>
-                            <em class="icon ni ni-arrow-long-right"></em>
+                            <em className="icon ni ni-arrow-long-right"></em>
                           </div>
                         </li>
                       </ul>
-                      <ul class="list list-row gy-0 gx-3">
+                      <ul className="list list-row gy-0 gx-3">
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>High reach</span>
                         </li>
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>Quality Content</span>
                         </li>
                         <li>
-                          <em class="icon ni ni-check-circle-fill text-success"></em>
+                          <em className="icon ni ni-check-circle-fill text-success"></em>
                           <span>Trustworthy</span>
                         </li>
                       </ul>

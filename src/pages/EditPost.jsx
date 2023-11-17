@@ -1,14 +1,17 @@
 import React, { useState, useRef } from "react";
-import JoditEditor from "jodit-react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import axios from "axios";
 import { BASE_URL } from "../services/apis";
 import { editPost } from "../services/operations/PostAPI";
+import Editor from 'react-simple-wysiwyg';
 import Img from "../images/logo-dark.png";
 const EditPost = () => {
+  const location = useLocation()
   const [content, setContent] = useState("");
   const [categorydata, setCategorydata] = useState([]);
+  const [PostData, setPostData] = useState([]);
   const [thumbnailImage, setImageFile] = useState(null);
   const [loading, setLoading] = useState(true);
   const editor = useRef(null);
@@ -30,6 +33,38 @@ const EditPost = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetchSinglePost();
+  }, [location]);
+  
+  useEffect(() => {
+    if (PostData) {
+      setValues({
+        title: PostData.title || "", // Make sure to handle potential undefined values
+        postedBy: PostData.postedBy || "",
+        seoTitle: PostData.seoTitle || "",
+        seoDescription: PostData.seoDescription || "",
+        canonical: PostData.canonical || "",
+        postUrl: PostData.postUrl || "",
+        category: PostData.category?._id || "",
+      });
+  
+      setContent(PostData.content || "");
+    }
+  }, [PostData]);
+  
+
+
+
+const fetchSinglePost = async () => {
+  const data = await axios.post(`${BASE_URL}/showsinglepostbyid`, {
+    url: id,
+  });
+  setPostData(data?.data?.post);
+  setLoading(false);
+};
+
+
   const [values, setValues] = useState({
     title: "",
     postedBy: "",
@@ -42,7 +77,7 @@ const EditPost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(thumbnailImage);
+
 
     const formData = new FormData();
 
@@ -94,6 +129,10 @@ const EditPost = () => {
     });
   };
 
+  function edtiorhandler(e) {
+    setContent(e.target.value);
+  }
+
   return (
     <div>
       <div className="nk-app-root ">
@@ -135,14 +174,7 @@ const EditPost = () => {
                               <div className="form-group">
                                 <label className="form-label">Content</label>
                                 <div className="form-control-wrap">
-                                  <JoditEditor
-                                    className="editor"
-                                    ref={editor}
-                                    value={content}
-                                    onChange={(newContent) =>
-                                      setContent(newContent)
-                                    }
-                                  />
+                                <Editor value={content} onChange={edtiorhandler} />
                                 </div>
                               </div>
                             </div>

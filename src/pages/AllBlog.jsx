@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
-import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
-import { BASE_URL } from "../services/apis";
 import { useEffect } from "react";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
@@ -16,7 +13,7 @@ const AllBlog = () => {
   const { token } = useSelector((state) => state.auth)
   const { posts } = useSelector((state) => state.post);
 
-  // console.log(posts)
+
   useEffect(()=>{
     setAllposts(posts)
   },[])
@@ -31,35 +28,38 @@ const AllBlog = () => {
   }
   return (
     <div className="allblogcontainer">
-      <Table>
-        <Thead>
-          <Tr>
-            <Th>Title</Th>
-            <Th>Image</Th>
-            <Th>Seo Title</Th>
-            <Th>Seo Description</Th>
-            <Th>Url</Th>
-            <Th>Post By</Th>
-            <Th>Options</Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {allposts?.map((post) => (
-            <Tr key={post._id}>
-              <Td>{post?.title}</Td>
-              <Td>
+    
+
+      <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Seo Title</th>
+      <th>Seo Description</th>
+      <th>Url</th>
+      <th>Post By</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    {allposts?.map((post) => (
+            <tr key={post._id}>
+              <td>{post?.title}</td>
+              <td>
                 <img
-                  src={post?.image?.url}
+                  src={post?.image}
                   height={100}
                   width={100}
                   alt="image"
                 />
-              </Td>
-              <Td>{post?.seoTitle}</Td>
-              <Td>{post?.seoDescription}</Td>
-              <Td>{post?.postUrl}</Td>
-              <Td>{post?.postedBy}</Td>
-              <Td>
+              </td>
+              <td>{post?.seoTitle}</td>
+              <td>{post?.seoDescription}</td>
+              <td>{post?.postUrl}</td>
+              <td>{post?.postedBy}</td>
+              <td>
                 <button
                   className="btnblog"
                   onClick={() => handleEditClick(post._id)}
@@ -69,11 +69,12 @@ const AllBlog = () => {
                 <button className="btnblog" onClick={()=>{handleDeleteClick(post._id)}}>
                   <AiFillDelete />
                 </button>
-              </Td>
-            </Tr>
+              </td>
+            </tr>
           ))}
-        </Tbody>
-      </Table>
+    
+  </tbody>
+</table>
     </div>
   );
 };

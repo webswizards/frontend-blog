@@ -29,7 +29,7 @@ const Body = () => {
     dispatch(showost(page));
     dispatch(showallpost());
   }, [dispatch, page]);
-console.log(page)
+
 
   return (
     <main className="nk-pages">
